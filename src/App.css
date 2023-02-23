@@ -298,17 +298,17 @@ body {
   position: relative;
   overflow-y: auto;
   max-height: calc(100vh - 4rem);
-  width: 80%;
+  width: 100%;
   right: -100%;
 }
 
 #checkmark {
   position: absolute;
   bottom: 0;
-  transform: translate(-50%, calc(100% - 2rem));
+  transform: translate(-50%, 0%);
   width: 80%;
   overflow-y: auto;
-  right: -130%;
+  right: -20%;
 }
 
 /* #root {
