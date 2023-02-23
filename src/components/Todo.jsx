@@ -6,9 +6,15 @@ export default function Todo(props){
     }
     function handleSubmit(e){
       e.preventDefault();
-      props.editTask(props.id,newName);
-      setNewName('');
-      setEditing(false);
+      const input=e.target.querySelector('input');
+      if(input.value===''){
+        alert('Please enter a value');
+      } else{
+        props.editTask(props.id,newName);
+        setNewName('');
+        setEditing(false);
+      }
+     
     }
 
 
@@ -22,7 +28,7 @@ export default function Todo(props){
           <input id={props.id} className="todo-text" type="text" value={newName} onChange={handleChange} />
         </div>
         <div className="btn-group">
-          <button type="button" className="btn todo-cancel" onClick={()=>setEditing(false)}>
+          <button type="button" className="btn todo-cancel" onClick={()=>{setEditing(false);setNewName('');}}>
             Cancel
             <span className="visually-hidden">renaming {props.name}</span>
           </button>
